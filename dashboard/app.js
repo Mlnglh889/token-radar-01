@@ -33,10 +33,7 @@
     var growthMult = 1 + (growth / 100) * model.growth_weight;
     var age = row.age_days === null || row.age_days === undefined ? model.unknown_age_days : row.age_days;
     var maturity = model.maturity_floor + (Math.min(Math.max(age, 0), model.maturity_days) / model.maturity_days) * model.maturity_range;
-    var diversity = 1 + Math.min((row.chains || []).length, 5) * model.diversity_weight;
-    var risky = /bridge|derivative|perpetual|insurance|staking|restak|rwa/i.test(row.category || '');
-    var risk = risky ? model.category_risk_floor : 1;
-    return Math.max(1, Math.round(row.tvl_usd * model.base_multiple * growthMult * maturity * diversity * risk));
+    return Math.max(1, Math.round(row.tvl_usd * model.base_multiple * growthMult * maturity));
   }
 
   function el(tag, attrs) {

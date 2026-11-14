@@ -1,14 +1,13 @@
 /* Token Radar's plain theme. The five palette values, two radii and two families are the whole style;
    everything else is spacing, a hairline and a type step. */
 :root {
-  --canvas: #0b1118;
-  --surface: #121c27;
-  --ink: #edf4f1;
-  --muted: #8fa4ae;
-  --border: #263746;
-  --accent: #65e6b5;
-  --negative: #ff8e80;
-  --warm: #ffcc7a;
+  --canvas: #f2f5f3;
+  --surface: #ffffff;
+  --ink: #16211c;
+  --muted: #5f6f67;
+  --border: #d8e2dc;
+  --accent: #0f7a5a;
+  --negative: #b23b2e;
   --radius-control: 8px;
   --radius-panel: 14px;
   --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -24,7 +23,6 @@
 
 * { box-sizing: border-box; }
 html { color-scheme: light; }
-html { color-scheme: dark; }
 body {
   margin: 0;
   background: var(--canvas);
@@ -77,7 +75,7 @@ a { color: var(--accent); }
 .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
 .count { margin-left: auto; color: var(--muted); font-size: 13px; align-self: center; }
 
-.panel { background: linear-gradient(145deg, #142331, var(--surface)); border: 1px solid var(--border); border-radius: var(--radius-panel); overflow: hidden; box-shadow: 0 16px 50px rgba(0,0,0,.16); }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-panel); overflow: hidden; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th, td { padding: var(--step-3) var(--step-3); border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
@@ -94,7 +92,7 @@ tbody tr[data-selected="true"] { background: color-mix(in srgb, var(--accent) 8%
 .pos { color: var(--accent); }
 .neg { color: var(--negative); }
 .bar { width: 120px; height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--border) 60%, var(--surface)); overflow: hidden; }
-.bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--warm)); }
+.bar i { display: block; height: 100%; background: var(--accent); }
 .implied { display: flex; align-items: center; gap: var(--step-2); }
 .status { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; white-space: nowrap; }
 .status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
